@@ -71,4 +71,4 @@ with open('j:/results.csv', 'w+') as f:
 
 DISPLAYING THE RESULTS
 -----------------------------------------------------------------
-Matlab script for displaying the average results for different sets of adversarial images (e.g. low quality SPAQ, high quality SPAQ etc.) is in script displayResults.m. Modify the name of the results file on line 7. Note that the results for different models should be stored in different results files.
+Matlab script for displaying the average results for different sets of adversarial images (e.g. low quality SPAQ, high quality SPAQ etc.) is in script `displayResults.m`. Modify the name of the results file on line 7. Note that the results for different models should be stored in different results files.
