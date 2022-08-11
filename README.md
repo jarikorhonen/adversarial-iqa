@@ -42,10 +42,10 @@ where filename is the name of the adversarial image file, and predmos is the MOS
 
 Note that we have not included scripts for computing the results for the black-box models, since these rely on third-party implementations. However, it is relatively straightforward to modify e.g. Python implementations to produce those results, e.g. as follows:
 
-# change the right path here
-im_path = 'j:/adversarials/' 
+*Change the right path here:* im_path = 'j:/adversarials/'
 
-# change the filename for the model, e.g. 'hyperiqa_results.csv'
+*Change the filename for the model:* e.g. 'hyperiqa_results.csv'
+
 with open('j:/results.csv', 'w+') as f: 
     for filename in os.listdir(im_path):
         if filename.endswith(".png"):
