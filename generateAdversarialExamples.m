@@ -22,9 +22,10 @@ filenames = datatxt(2:end,1);
 
 % Read the pre-trained substitute model
 load('IQA_MODEL_01.mat', 'model');
+[~,mos_idx]=sort(mosdata(:,1),'ascend');
 
 % Generate low quality SPAQ adversarial images
-low = [51,2419,3481,4359,6134,7379,9241,9416,9439,9598];
+low = mos_idx(1:500); 
 for i=1:length(low)
     infilename = sprintf('%s\\%05d.png', spaq_folder, low(i));
     outfilename = sprintf('%s\\spaq_low_%02d_orig.png',out_folder, i);
@@ -41,7 +42,7 @@ for i=1:length(low)
 end
 
 % Generate medium quality SPAQ adversarial images
-med = [798,3132,6816,7200,8140,8928,9577,9840,10238,10951];
+med = mos_idx(5501:6000); 
 for i=1:length(med)
     infilename = sprintf('%s\\%05d.png', spaq_folder, med(i));
     outfilename = sprintf('%s\\spaq_med_%02d_orig.png',out_folder,i);
@@ -58,7 +59,7 @@ for i=1:length(med)
 end
 
 % Generate high quality SPAQ adversarial images
-high = [395,1088,1942,5201,5202,5324,6451,6798,7248,7311];
+high = mos_idx(end-499:end); 
 for i=1:length(high)
     infilename = sprintf('%s\\%05d.png', spaq_folder, high(i));
     outfilename = sprintf('%s\\spaq_hgh_%02d_orig.png',out_folder,i);
