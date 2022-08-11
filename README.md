@@ -4,7 +4,7 @@ This files includes instructions for reproducing the results for white-box model
 
 This package contains the following Matlab files:
 
-`readme.txt` (this file)
+`README.md` (this file)
 
 `makeSmallSpaq.m` (resizing SPAQ images to 512x384 resolution)
 
