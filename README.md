@@ -18,25 +18,25 @@ Tested with Matlab R2021b (Windows10). Requires deep learning toolbox, image pro
 
 KoNIQ-10k dataset is required for training the substitute BIQA model (512x384 resolution version), can be downloaded from http://database.mmsp-kn.de/koniq-10k-database.html.
 
-SPAQ dataset is required for generating the adversarial examples, can be downloaded from https://github.com/h4nwei/SPAQ. Note that we use 512x384 resolution version of the images, whereas the original dataset includes images with different resolutions. You can use Matlab script makeSmallSpaq.m in this package for downscaling the images.
+SPAQ dataset is required for generating the adversarial examples, can be downloaded from https://github.com/h4nwei/SPAQ. Note that we use 512x384 resolution version of the images, whereas the original dataset includes images with different resolutions. You can use Matlab script `makeSmallSpaq.m` in this package for downscaling the images.
 
 TRAINING THE SUBSTITUTE MODEL
 -----------------------------------------------------------------
-Matlab script trainSubstituteModel.m can be used to train the substitute BIQA model, as described in the paper. KoNIQ-10k needs to be installed. You need to modify path on line 9 in the script for your path to the KoNIQ-10k images and metadata. The script saves the resulting model in file IQA_MODEL_01.mat.
+Matlab script `trainSubstituteModel.m` can be used to train the substitute BIQA model, as described in the paper. KoNIQ-10k needs to be installed. You need to modify path on line 9 in the script for your path to the KoNIQ-10k images and metadata. The script saves the resulting model in file _IQA_MODEL_01.mat_.
 
 Please note that random initialization of weights is used, and therefore the results may slightly change from those reported in the paper. There should not be dramatic differences, though.
 
 GENERATING ADVERSARIAL EXAMPLES
 -----------------------------------------------------------------
-The adversarial image generator, described in the paper in Section 3, is implemented in Matlab script generateAdversaryImage.m. 
+The adversarial image generator, described in the paper in Section 3, is implemented in Matlab script `generateAdversaryImage.m`. 
 
-You can use script generateAdversarialExamples.mat to generate the adversarial examples described in Section 4. You need to modify spaq_folder on line 8 for the folder with SPAQ images (512x384 resolution), and out_folder on line 10 to the folder where you want to save the adversarial examples. In addition, you need to have the IQA_MODEL_01.mat in the same folder where you run the script.
+You can use script `generateAdversarialExamples.mat` to generate the adversarial examples described in Section 4. You need to modify `spaq_folder` on line 8 for the folder with SPAQ images (512x384 resolution), and `out_folder` on line 10 to the folder where you want to save the adversarial examples. In addition, you need to have the _IQA_MODEL_01.mat_ in the same folder where you run the script.
 
 COMPUTING THE RESULTS
 -----------------------------------------------------------------
-After you have generated the adversarial examples, you can compute the results for the substitute model by using script generateResults.m. You need to modify the folder on line 8 to the folder with your adversarial images, and file name on line 10 to be the results file where you want to store the results. The results file is a CSV file with format:
+After you have generated the adversarial examples, you can compute the results for the substitute model by using script `generateResults.m`. You need to modify the folder on line 8 to the folder with your adversarial images, and file name on line 10 to be the results file where you want to store the results. The results file is a CSV file with format:
 
-filename,predmos
+`filename,predmos`
 
 where filename is the name of the adversarial image file, and predmos is the MOS predicted for the image.
 
