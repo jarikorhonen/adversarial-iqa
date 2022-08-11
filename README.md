@@ -42,9 +42,9 @@ COMPUTING THE RESULTS
 -----------------------------------------------------------------
 After you have generated the adversarial examples, you can compute the results for the substitute model by using script `generateResults.m`. You need to modify the folder on line 8 to the folder with your adversarial images, and file name on line 10 to be the results file where you want to store the results. The results file is a CSV file with format:
 
-`filename,predmos`
+_filename,predmos_
 
-where filename is the name of the adversarial image file, and predmos is the MOS predicted for the image.
+where _filename_ is the name of the adversarial image file, and _predmos_ is the MOS predicted for the image.
 
 Note that we have not included scripts for computing the results for the black-box models, since these rely on third-party implementations. However, it is relatively straightforward to modify e.g. Python implementations to produce those results, e.g. as follows:
 
