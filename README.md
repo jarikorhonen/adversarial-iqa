@@ -4,12 +4,18 @@ This files includes instructions for reproducing the results for white-box model
 
 This package contains the following Matlab files:
 
-`readme.txt (this file)`
+`readme.txt` (this file)
+
 `makeSmallSpaq.m` (resizing SPAQ images to 512x384 resolution)
+
 `trainSubstituteModel.m` (training the substitute BIQA model)
+
 `generateAdversaryImage.m` (adversarial image generator)
+
 `generateAdversarialExamples.m` (generating adversarial examples)
+
 `generateResults.m` (generating results with the substitute model)
+
 `displayResults.m` (displaying results)
 
 PRELIMINARIES
